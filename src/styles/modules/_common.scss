@@ -1,0 +1,88 @@
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.scroll-parent {
+  @extend %scroll-parent;
+}
+
+.backDrop {
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($black, 0.6);
+}
+
+.note {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.4;
+  letter-spacing: 0.18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fieldSection {
+  margin-bottom: 30px;
+
+  h4 {
+    margin-bottom: 4px;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.fw-700 {
+  font-weight: 700;
+}

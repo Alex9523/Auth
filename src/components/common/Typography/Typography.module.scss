@@ -1,0 +1,110 @@
+@import "src/styles/vendors/abstracts";
+
+.reset {
+  margin: 0;
+  padding: 0;
+}
+
+.typography {
+  &--variant {
+    &-h1 {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    &-h2 {
+      font-size: $h2-font-size;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+
+      @include m(tablet) {
+        font-size: $h2-font-size-lg;
+      }
+    }
+
+    &-h3 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-h4 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-h5 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    &-h6 {
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+    }
+
+    &-large {
+      font-size: 60px;
+      letter-spacing: 0.6px;
+      font-weight: 700;
+    }
+
+    &-subheading2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      opacity: 0.6;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  &--subheading1 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+  }
+
+  &--color {
+    &-white {
+      color: $white;
+    }
+    &-black {
+      color: $black;
+    }
+    &-dark-gray {
+      color: $dark-gray;
+    }
+    &-gray {
+      color: $gray;
+    }
+    &-green {
+      color: $green;
+    }
+    &-gray-primary {
+      color: $gray-primary;
+    }
+    &-green-primary {
+      color: $green-primary;
+    }
+    &-primary-color {
+      color: $primary-color;
+    }
+    &-accent {
+      color: $accent;
+    }
+    &-bg-color {
+      color: $bg-color;
+    }
+    &-text-color {
+      color: $text-color;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "src/styles/vendors/abstracts";
+
+.wrapper {
+  padding: 0 12px;
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include m(mobile) {
+    padding: 0 20px;
+    flex-direction: row;
+  }
+}

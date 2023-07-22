@@ -1,0 +1,31 @@
+@import "src/styles/vendors/abstracts";
+.inputWrapp {
+  height: 45px;
+  .customStyles, input[type="password"] {
+    border: 1px solid $gray;
+    border-radius: 8px;
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+    color: $black;
+    background: $white;
+
+    &:focus-visible, &:focus {
+      border-color: $black;
+      outline: none;
+      background: $white;
+    }
+  }
+
+  .isError {
+    border: 1px solid $alert;
+
+    &:focus-visible, &:focus {
+      border: 1px solid $alert;
+    }
+  }
+
+  p {
+    color: $alert;
+  }
+}

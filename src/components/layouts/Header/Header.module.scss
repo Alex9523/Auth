@@ -1,0 +1,57 @@
+@import "src/styles/vendors/abstracts";
+
+.header {
+  background-color: $bg-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $container-width;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.navHolder {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include m(mobile) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+}
+
+.sidebar {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%);
+  max-width: 80px;
+  flex-shrink: 0;
+
+  @include m(mobile) {
+    position: static;
+    width: 160px;
+    max-width: 160px;
+    transform: none;
+  }
+
+  @include m(tablet) {
+    width: 200px;
+    max-width: 200px;
+  }
+}
+
+.logo {
+  width: 50px;
+}

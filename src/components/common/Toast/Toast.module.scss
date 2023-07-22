@@ -1,0 +1,15 @@
+@import "src/styles/vendors/abstracts";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: #{$font-size-base}/#{$line-height-base} $font;
+  padding: 10px 0 20px;
+}
+
+.title {
+  font-size: 1.375rem;
+  margin-bottom: 20px;
+}
+

@@ -1,0 +1,164 @@
+%scroll-wrap {
+  scrollbar-width: thin;
+  scrollbar-color: $scroll_thumb $scroll_track;
+}
+
+%scroll-parent {
+  display: flex;
+  flex-direction: column;
+
+  & > .scroll {
+    @extend %scroll-wrap;
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+%link {
+  text-decoration: none;
+  transition: 0.3s color;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+@mixin appearance-none() {
+  @supports (-webkit-appearance: none) or (-moz-appearance: none) or
+    (appearance: none) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+@mixin scroll-container($width) {
+  margin: 0 $width * (-1);
+  padding: 0 $width;
+}
+
+@mixin b($point) {
+  @if $point == desktop-wide {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (max-width: 1466px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 1140px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $point + "px") {
+      @content;
+    }
+  }
+}
+
+@mixin m($point) {
+  @if $point == desktop-wide {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1467px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 1141px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $point + "px") {
+      @content;
+    }
+  }
+}
+
+$animation-speed: 0.3s !default;
+
+@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out) {
+  $list: ();
+  @each $prop in $properties {
+    $str: #{$prop} #{$duration} #{$easing};
+    $list: join($list, #{$str}, comma);
+  }
+  transition: $list;
+}
+
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%btnreset {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+%elem-in-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin placeholderColor($input-text-color, $opacity) {
+  &::-webkit-input-placeholder {
+    color: $input-text-color !important;
+    opacity: $opacity !important;
+  }
+  &:-moz-placeholder {
+    color: $input-text-color !important;
+    opacity: $opacity !important;
+  }
+  &::-moz-placeholder {
+    color: $input-text-color !important;
+    opacity: $opacity !important;
+  }
+  &:-ms-input-placeholder {
+    color: $input-text-color !important;
+    opacity: $opacity !important;
+  }
+}
+
+@mixin delimiter($margin, $color: "inherit") {
+  &:after {
+    content: "|";
+    margin: 0 #{$margin}px;
+    display: inline-block;
+    vertical-align: top;
+    color: $color;
+    font-weight: 400;
+  }
+}
+
+%contentPadding {
+  padding: 20px 12px;
+
+  @include m(mobile) {
+    padding: 30px 20px;
+  }
+
+  @include m(tablet) {
+    padding: 50px 20px 50px 50px;
+  }
+
+  @include m(desktop-wide) {
+    padding: 50px 100px;
+  }
+}

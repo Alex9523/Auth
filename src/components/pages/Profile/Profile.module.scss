@@ -1,0 +1,16 @@
+.profileWrapper {
+  margin: 0 100px;
+  padding-left: 10px;
+  border-left: 1px solid white;
+
+  h3, h4 {
+    margin: 0;
+  }
+
+  .fio {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+}

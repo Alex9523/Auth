@@ -1,0 +1,150 @@
+@import "src/styles/vendors/abstracts";
+
+.notFound {
+  background-color: $bg-color;
+  width: 100vw;
+  height: calc(100vh - 120px);
+  overflow: scroll;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  padding: 10px 12px;
+  width: 100%;
+
+  @include m(mobile) {
+    max-width: $container-width;
+    padding: 40px 100px;
+  }
+}
+
+.logo {
+  width: 37px;
+
+  @include m(mobile) {
+    width: 140px;
+    margin-bottom: 2px;
+  }
+
+  @include m(tablet) {
+    width: 170px;
+  }
+}
+
+.notFoundContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px;
+
+  .link {
+    position: relative;
+    opacity: 1;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      background-color: $primary-color;
+      z-index: 0;
+      width: 32px;
+      height: 32px;
+    }
+
+    &:not(.-block) {
+      &:hover {
+        .linkArrow {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  @include m(mobile) {
+    padding: 0;
+  }
+
+  .errorWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $black;
+    text-shadow: -1px 0 $white,
+      0 1px $white,
+      1px 0 $white,
+      0 -1px $white;
+
+    @include m(mobile) {
+      width: 770px;
+      max-height: 310px;
+      font-size: 320px;
+      font-weight: 700;
+    }
+
+    @include b(mobile) {
+      font-size: 120px;
+      font-weight: 600;
+    }
+
+    img {
+      width: 372px;
+      height: 372px;;
+
+      @include b(mobile) {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    p {
+      height: inherit;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    margin-bottom: 20px;
+
+    @include b(mobile) {
+      font-size: 26px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .noticeText {
+    font-size: 15px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    line-height: 22px;
+
+    @include b(mobile) {
+      font-size: 10px;
+    }
+  }
+
+  .linkArrow{
+    transition: transform .3s ease-in-out;
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    z-index: 1;
+  }
+
+  .linkToHomeText {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+    color: $accent;
+    margin-left: 40px;
+  }
+}

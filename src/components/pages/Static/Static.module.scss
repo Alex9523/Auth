@@ -1,0 +1,54 @@
+@import "src/styles/vendors/abstracts";
+
+.wrapper {
+  padding: 0 12px;
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+
+  @include m(mobile) {
+    padding: 0 20px;
+  }
+}
+
+.display-block {
+  display: block;
+}
+
+.boundaryLayout {
+  padding: 44px 100px;
+
+  &__content {
+    position: absolute;
+    bottom: 25%;
+
+    & > img {
+      position: relative;
+      left: -100px;
+    }
+  }
+}
+
+.arrow_link_up_container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & > img {
+    margin-right: 14px;
+  }
+}
+
+.header {
+  margin-bottom: 30px;
+
+  @include m(tablet) {
+    margin-bottom: 60px;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}

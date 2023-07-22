@@ -1,0 +1,59 @@
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-style: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+textarea {
+  @include appearance-none;
+  @include placeholderColor(currentColor, 0.6);
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  border: 2px solid $white;
+  color: $white;
+  padding: 12px 20px 13px;
+  font-size: 15px;
+  line-height: 1.267;
+  letter-spacing: 0.6px;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+    background: transparent;
+  }
+
+  @include m(tablet) {
+    padding-top: 9px;
+    padding-bottom: 10px;
+  }
+
+  @include m(desktop) {
+    padding-top: 12px;
+    padding-bottom: 13px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="search"]::-ms-reveal,
+input[type="password"]::-ms-reveal,
+input[type="search"]::-ms-clear,
+input[type="password"]::-ms-clear {
+  display: none;
+}

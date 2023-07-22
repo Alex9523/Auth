@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+################################## frontend
+  mvp:
+    image: "nxs-develop.auth.dev/"
+    networks:
+      - layer
+    ports:
+      - '8282:80'
+    volumes:
+      - mvp-logs:/var/log/nginx
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+################################## environment
+volumes:
+  mvp-logs:
+networks:
+  layer:
+    driver: overlay
+    attachable: true
+    ipam:
+      config:
+        - subnet: 10.2.0.1/16
