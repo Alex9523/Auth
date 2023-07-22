@@ -1,6 +1,5 @@
 import React from "react";
 
-import { default as ArrowUpRight } from "assets/images/icons/arrow-up-right.svg";
 import { StaticRoute } from "const/routes"
 import { Link } from "react-router-dom";
 
@@ -15,10 +14,6 @@ export const NotFoundPage = () => (
           The page you’re looking for was moved, renamed, removed or might never exist.
         </p>
         <Link to={`${StaticRoute.ROOT}/`} className={s.link}>
-          <img
-            className={s.linkArrow}
-            src={ArrowUpRight} alt="arrow"
-          />
           <p className={s.linkToHomeText}>go to homepage</p>
         </Link>
       </div>
