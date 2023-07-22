@@ -15,7 +15,7 @@ function* login({ payload }: any) {
     if (res) {
       storageSvc.setItem('isAuth', true);
       yield put(makeAction(LOGIN.SUCCESS, res));
-      window.location.pathname = StaticRoute.PROFILE;
+      window.location.pathname = StaticRoute.ROOT;
     } else {
       yield put(makeAction(LOGIN.FAILURE, res));
     }
